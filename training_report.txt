@@ -1,0 +1,92 @@
+================================================================================
+SALARY PREDICTION MODEL - TRAINING REPORT
+================================================================================
+
+DATASET INFORMATION:
+--------------------------------------------------------------------------------
+Total Records:        29,850
+Training Set:         25,372 (85.0%)
+Test Set:             4,478 (15.0%)
+Total Features:       104
+Skill Features:       60 (TF-IDF)
+
+MODEL ARCHITECTURE:
+--------------------------------------------------------------------------------
+Stacking Ensemble Components:
+  - Base Model 1: XGBoost (1000 estimators)
+  - Base Model 2: Random Forest (400 estimators)
+  - Base Model 3: Extra Trees (400 estimators)
+  - Base Model 4: Neural Network (3-layer: 256-128-64)
+  - Meta-Learner: Ridge Regression (alpha=5.0)
+
+ALL MODEL RESULTS:
+================================================================================
+
+1. Stacking Ensemble ⭐ BEST
+--------------------------------------------------------------------------------
+   R² Score:         0.9702 (97.02%)
+   Accuracy (±10%):  91.29%
+   MAE:              $7,071
+   RMSE:             $8,846
+
+2. XGBoost
+--------------------------------------------------------------------------------
+   R² Score:         0.9698 (96.98%)
+   Accuracy (±10%):  91.54%
+   MAE:              $7,115
+   RMSE:             $8,903
+
+3. Extra Trees
+--------------------------------------------------------------------------------
+   R² Score:         0.9466 (94.66%)
+   Accuracy (±10%):  82.54%
+   MAE:              $9,458
+   RMSE:             $11,847
+
+4. Neural Network
+--------------------------------------------------------------------------------
+   R² Score:         0.9463 (94.63%)
+   Accuracy (±10%):  82.36%
+   MAE:              $9,431
+   RMSE:             $11,875
+
+5. Random Forest
+--------------------------------------------------------------------------------
+   R² Score:         0.9264 (92.64%)
+   Accuracy (±10%):  78.27%
+   MAE:              $10,847
+   RMSE:             $13,902
+
+================================================================================
+SELECTED MODEL FOR DEPLOYMENT:
+================================================================================
+Model:               Stacking Ensemble
+R² Score:            0.9702 (97.02%)
+Accuracy (±10%):     91.29%
+MAE:                 $7,071
+RMSE:                $8,846
+
+FEATURE ENGINEERING:
+--------------------------------------------------------------------------------
+  - Target Encoding (job_title, industry, field_of_study)
+  - Frequency Encoding (categorical features)
+  - Power Transform (Yeo-Johnson on target variable)
+  - Robust Scaling (handle outliers)
+  - TF-IDF Vectorization (skills with bigrams)
+  - Polynomial Features (experience squared, log)
+  - Interaction Features (seniority × exp, edu × seniority, etc.)
+  - Achievement Score (weighted sum of accomplishments)
+
+MODEL COMPARISON (Ranked by R² Score):
+--------------------------------------------------------------------------------
+Rank   Model                     R² Score     Accuracy     MAE          RMSE        
+--------------------------------------------------------------------------------
+1      Stacking Ensemble          97.02%      91.29%     $    7,071  $    8,846 ⭐
+2      XGBoost                    96.98%      91.54%     $    7,115  $    8,903
+3      Extra Trees                94.66%      82.54%     $    9,458  $   11,847
+4      Neural Network             94.63%      82.36%     $    9,431  $   11,875
+5      Random Forest              92.64%      78.27%     $   10,847  $   13,902
+
+================================================================================
+Training completed successfully!
+================================================================================
