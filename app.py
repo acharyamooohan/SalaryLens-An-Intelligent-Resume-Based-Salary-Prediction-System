@@ -2347,8 +2347,8 @@ def _render_form(fd: dict, key_prefix: str):
                 st.markdown(f"• {issue}")
             st.info("💡 These are recommendations. You can still proceed with prediction, but results may be less accurate with unrealistic combinations.")
 
-    # Write back to session state
-    st.session_state.form_data.update({
+    # Write back to session state - use correct variable based on key_prefix
+    form_data_updates = {
         'job_title': jt,
         'seniority_level': sl,
         'years_of_experience': yoe,
@@ -2366,7 +2366,13 @@ def _render_form(fd: dict, key_prefix: str):
         'certifications': cert,
         'has_leadership_experience': int(lead),
         'has_open_source_contributions': int(oss),
-    })
+    }
+    
+    # Update the correct session state variable based on key_prefix
+    if key_prefix == "manual":
+        st.session_state.manual_form_data.update(form_data_updates)
+    else:
+        st.session_state.form_data.update(form_data_updates)
 
 
 # ─────────────────────────────────────────────────────────────────────────────

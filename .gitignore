@@ -1,0 +1,15 @@
+# IDE configurations
+.idea/
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Sensitive environment variables
+.env
+
+# Ignore trained model binaries/weights
+models/
+
+# Optional: Large datasets
+resume_salary_dataset_30k.csv
