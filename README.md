@@ -732,7 +732,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation**: Check this README and code comments
 - **Issues**: Open a GitHub issue for bugs or feature requests
 - **Discussions**: Use GitHub Discussions for questions
-- **Email**: [your-email@domain.com](mailto:your-email@domain.com)
+- **Email**: [professortate3@gmail.com](mailto:professortate3@gmail.com)
 
 ### Reporting Issues
 When reporting issues, please include:
