@@ -752,6 +752,6 @@ When reporting issues, please include:
 [![GitHub stars](https://img.shields.io/github/stars/yourusername/salarylens?style=social)](https://github.com/yourusername/salarylens/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/salarylens?style=social)](https://github.com/yourusername/salarylens/network/members)
 
-Made with ❤️ by [Your Name](https://github.com/acharyamooohan)
+Made with ❤️ by [Mohan Acharya, Prince Chaudhary, Pradeep Badu](https://github.com/acharyamooohan)
 
 </div>
